@@ -1,0 +1,38 @@
+.split {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: whitesmoke;
+}
+
+.right {
+  right: 0;
+  background-color: skyblue;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 500px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.left-align-text {
+  text-align: left;
+}

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --ssl",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -11,13 +11,16 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.0.4",
+    "@angular/cdk": "^12.1.0",
     "@angular/common": "~12.0.4",
     "@angular/compiler": "~12.0.4",
     "@angular/core": "~12.0.4",
     "@angular/forms": "~12.0.4",
+    "@angular/material": "^12.1.0",
     "@angular/platform-browser": "~12.0.4",
     "@angular/platform-browser-dynamic": "~12.0.4",
     "@angular/router": "~12.0.4",
+    "angular-auth-oidc-client": "file:../../../../_git/DamienBod/angular-auth-oidc-client/dist/angular-auth-oidc-client",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
