@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  ConfigAuthenticated,
-  ConfigUserData,
+  AuthenticatedResult,
   OidcSecurityService,
+  UserDataResult,
 } from 'angular-auth-oidc-client';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,19 +16,15 @@ export class AppComponent implements OnInit {
 
   aadResult: any;
   auth0Result: any;
-  allAuth: ConfigAuthenticated[] = [];
-  allUserData: ConfigUserData[] = [];
+  allAuth$: Observable<AuthenticatedResult>;
+  allUserData$: Observable<UserDataResult>;
 
   constructor(private oidcSecurityService: OidcSecurityService) {}
 
   ngOnInit() {
-    this.oidcSecurityService.isAuthenticated$.subscribe(
-      ({ allConfigsAuthenticated }) => (this.allAuth = allConfigsAuthenticated)
-    );
+    this.allAuth$ = this.oidcSecurityService.isAuthenticated$;
 
-    this.oidcSecurityService.userData$.subscribe(
-      ({ allUserData }) => (this.allUserData = allUserData)
-    );
+    this.allUserData$ = this.oidcSecurityService.userData$;
 
     this.oidcSecurityService.checkAuthMultiple().subscribe((result) => {
       this.auth0Result = result.find((x) => x.configId === 'auth0-config');

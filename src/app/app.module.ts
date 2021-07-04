@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
       config: [
         {
           configId: 'auth0-config',
-          stsServer: 'https://dev-damienbod.eu.auth0.com',
+          authority: 'https://dev-damienbod.eu.auth0.com',
           redirectUrl: window.location.origin,
           postLogoutRedirectUri: window.location.origin,
           clientId: 'Ujh5oSBAFr1BuilgkZPcMWEgnuREgrwU',
@@ -37,7 +37,7 @@ import { AppComponent } from './app.component';
         },
         {
           configId: 'aad-config',
-          stsServer:
+          authority:
             'https://login.microsoftonline.com/7ff95b15-dc21-4ba6-bc92-824856578fc1/v2.0',
           authWellknownEndpointUrl:
             'https://login.microsoftonline.com/common/v2.0',
